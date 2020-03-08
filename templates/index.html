@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        {% if title %}
+        <title>DCKAP Community Insider Program</title>
+        {% else %}
+        <title>Welcome to {{ title }}!</title>
+        {% endif %}
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}"  >
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+
+</head>
+
+<body>
+
+<section>
+    
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="login-bg col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="login-form">
+                     <img src="{{ url_for('static', filename = 'images/logo.png') }}" />
+                     <div class="user-name"> Username:*<input type="text" name="Username /"></div>
+                     <div class="user-pass"> Password:*<input type="text" name="Username /"></div>
+                     <button class="login-btn"> Login </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+
+</body>
+</html>
