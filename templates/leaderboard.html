@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        {% if title %}
+        <title>DCKAP Community Insider Program</title>
+        {% else %}
+        <title>Welcome to {{ title }}!</title>
+        {% endif %}
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename = 'lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+    <div class="brand-border"></div>
+    <header id="header">
+        <div class="container-fluid">
+            <div id="logo" class="pull-left">
+                <a href="index.php"><img class="" src="{{ url_for('static', filename = 'img/logo.png') }}" height="75px"/></a>
+            </div>
+            <div>
+                <button type="button" class="btn adduser" data-toggle="modal" data-target="#addUser">Add User</button>
+            </div>
+        </div>
+
+    </header>
+    <!--Works-->
+    <section class="work work-bg" id="work">
+        <div class="container">
+            <div class="row">
+                <div class="">
+                    <!-- Bootstrap CSS File -->
+
+<main id="main">
+    <section id="portfolio"  class="section-bg" >
+        <div class="container">
+            <header class="section-header">
+            </header>
+            <div class="row portfolio-container">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                    <div class="portfolio-wrap">
+                        <div class="row">
+                            <figure>
+                                <img src="{{ url_for('static', filename = 'img/e1.jpg') }}" class="img-fluid" alt="">
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 portfolio-info">
+                                <h4><a href="#">John William</a></h4>
+                                <span> Developer </span>
+                            </div>
+                            <div class="col-md-3 portfolio-info point-info">
+                                <h4><a href="#">300</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                    <div class="portfolio-wrap">
+                        <div class="row">
+                            <figure>
+                                <img src="{{ url_for('static', filename = 'img/e2.jpg') }}" class="img-fluid" alt="">
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 portfolio-info">
+                                <h4><a href="#">John William</a></h4>
+                                <span> Developer </span>
+                            </div>
+                            <div class="col-md-3 portfolio-info point-info">
+                                <h4><a href="#">300</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                    <div class="portfolio-wrap">
+                        <div class="row">
+                            <figure>
+                                <img src="{{ url_for('static', filename = 'img/e3.jpg') }}" class="img-fluid" alt="">
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 portfolio-info">
+                                <h4><a href="#">John William</a></h4>
+                                <span> Developer </span>
+                            </div>
+                            <div class="col-md-3 portfolio-info point-info">
+                                <h4><a href="#">300</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                    <div class="portfolio-wrap">
+                        <div class="row">
+                            <figure>
+                                <img src="{{ url_for('static', filename = 'img/e1.jpg') }}" class="img-fluid" alt="">
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 portfolio-info">
+                                <h4><a href="#">John William</a></h4>
+                                <span> Developer </span>
+                            </div>
+                            <div class="col-md-3 portfolio-info point-info">
+                                <h4><a href="#">300</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                    <div class="portfolio-wrap">
+                        <div class="row">
+                            <figure>
+                                <img src="{{ url_for('static', filename = 'img/e3.jpg') }}" class="img-fluid" alt="">
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 portfolio-info">
+                                <h4><a href="#">John William</a></h4>
+                                <span> Developer </span>
+                            </div>
+                            <div class="col-md-3 portfolio-info point-info">
+                                <h4><a href="#">300</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                    <div class="portfolio-wrap">
+                        <div class="row">
+                            <figure>
+                                <img src="{{ url_for('static', filename = 'img/e1.jpg') }}" class="img-fluid" alt="">
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 portfolio-info">
+                                <h4><a href="#">John William</a></h4>
+                                <span> Developer </span>
+                            </div>
+                            <div class="col-md-3 portfolio-info point-info">
+                                <h4><a href="#">300</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="modal fade" id="addUser" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add User</h4>
+            </div>
+            <div class="modal-body" style="overflow: hidden">
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">name</label>
+                    <input class="col-md-6" type="text" id="name" name="name"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employeeid</label>
+                    <input class="col-md-6" type="text" id="employeeid" name="employeeid"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">designation</label>
+                    <input class="col-md-6" type="text" id="designation" name="designation"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employee_branch</label>
+                    <input class="col-md-6" type="text" id="employee_branch" name="employee_branch"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employee_doj</label>
+                    <input class="col-md-6" type="text" id="employee_doj" name="employee_doj"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employee_dob</label>
+                    <input class="col-md-6" type="text" id="employee_dob" name="employee_dob"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">is_admin</label>
+                    <input class="col-md-6" type="text" id="is_admin" name="is_admin"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employee_type</label>
+                    <input class="col-md-6" type="text" id="employee_type" name="employee_type"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="{{ url_for('static', filename = 'js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/wow.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/common.js') }}"></script>
+</body>
+</html>
