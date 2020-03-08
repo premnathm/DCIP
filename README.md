@@ -6,3 +6,5 @@ DCKAP Community Insider program is the point-based reward system. Converts your 
 
 Hackathon #2: DCIP Application
 “Build a web application to view and manage all the users and their reward points.”
+
+Technology : Python
