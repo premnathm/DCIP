@@ -46,6 +46,31 @@
             <header class="section-header">
             </header>
             <div class="row portfolio-container">
+                {% if result %}
+                    {% for employee in result %}
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                            <div class="portfolio-wrap">
+                                <div class="row">
+                                    <figure>
+                                        <img src="{{ url_for('static', filename = 'img/e1.jpg') }}" class="img-fluid" alt="">
+                                    </figure>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 portfolio-info">
+                                        <h4><a href="#">{{ employee[1] }}</a></h4>
+                                        <span> {{ employee[2] }} </span>
+                                    </div>
+                                    <div class="col-md-3 portfolio-info point-info">
+                                        <h4><a href="#">{{ employee[3] }}</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    {% endfor %}
+                {% endif %}
+
+
+
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
                     <div class="portfolio-wrap">
                         <div class="row">

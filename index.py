@@ -1,35 +1,53 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, session, url_for, render_template, request, jsonify
 from flask_mysqldb import MySQL
+from flask_hashing import Hashing
+
 app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'welcome'
-app.config['MYSQL_DB'] = 'sample'
+app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_DB'] = 'dcip'
 
 mysql = MySQL(app)
 
+app.secret_key = 'Rhino3dTheF@nt@stic4'
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        details = request.form
+        hashing = Hashing(app)
+        username = details['username']
+        passwordhash = hashing.hash_value(details['password'], salt='rhino3d')
+        cur = mysql.connection.cursor()
+        query = "SELECT employeeid FROM dcip_employees WHERE employeeid = %s AND password = %s"
+        param = (username, passwordhash)
+        cur.execute(query, param)
+        userdata = cur.fetchall()
+        employeeid = '';
+        for row in userdata: 
+            employeeid = row[0]
+        if(len(employeeid) > 0):   
+            session['employeeid'] = employeeid 
+            return redirect(url_for('leaderboard'))
+    else:
+        return render_template('index.html', title='DCKAP Community Insider Program')
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
-	user = {'username': 'Miguel'}
-	return render_template('index.html', title='DCKAP Community Insider Program', user=user)
+    if 'employeeid' in session:
+        return redirect(url_for('leaderboard'))
+    else:
+        return redirect(url_for('login'))
 
 @app.route('/leaderboard', methods=['GET', 'POST'])
 def leaderboard():
-	return render_template('leaderboard.html')
-
-@app.route('/sample', methods=['GET', 'POST'])
-def sample():
-    if request.method == "POST":
-        details = request.form
-        firstName = details['fname']
-        lastName = details['lname']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO MyUsers(firstName, lastName) VALUES (%s, %s)", (firstName, lastName))
-        mysql.connection.commit()
-        cur.close()
-        return 'success'
-    return render_template('sample.html')
-
+    cur = mysql.connection.cursor()
+    query = "SELECT id,name,designation,total_points FROM dcip_employees"
+    cur.execute(query)
+    employeesdata = cur.fetchall()
+    return render_template('leaderboard.html',result=employeesdata)
+        
 if __name__ == '__main__':
     app.run()

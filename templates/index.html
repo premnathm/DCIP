@@ -28,11 +28,12 @@
             <div class="login-bg col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                 <div class="login-form">
-                     <img src="{{ url_for('static', filename = 'images/logo.png') }}" />
-                     <div class="user-name"> Username:*<input type="text" name="Username /"></div>
-                     <div class="user-pass"> Password:*<input type="text" name="Username /"></div>
-                     <button class="login-btn"> Login </button>
-
+                     <form action="/login" method="POST">
+                         <img src="{{ url_for('static', filename = 'images/logo.png') }}" />
+                         <div class="user-name"> Username:*<input type="text" name="username"></div>
+                         <div class="user-pass"> Password:*<input type="text" name="password"></div>
+                         <button type="submit" class="login-btn"> Login </button>
+                     </form>
                 </div>
 
             </div>
