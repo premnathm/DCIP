@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'welcome'
-app.config['MYSQL_DB'] = 'dcip_12march'
+app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_DB'] = 'dcip'
 
 mysql = MySQL(app)
 
@@ -32,6 +32,8 @@ def login():
         if(len(employeeid) > 0):   
             session['employeeid'] = employeeid 
             return redirect(url_for('leaderboard'))
+        else:
+            return redirect(url_for('login')) 
     else:
         return render_template('index.html', title='DCKAP Community Insider Program')
 
@@ -61,6 +63,17 @@ def karmahistory(emp_id):
     karmahistory = cur.fetchall()
     # return jsonify(karmahistory)
     return render_template('karmahistory.html',result=karmahistory)    
-        
+
+
+@app.route('/karma-list')
+def karmalist():
+    cur = mysql.connection.cursor()
+    query = "SELECT id,item_name,point FROM dcip_items"
+    cur.execute(query)
+    itemsdata = cur.fetchall()
+    # return jsonify(itemsdata)
+    return render_template('items.html',result=itemsdata)
+
+
 if __name__ == '__main__':
     app.run()

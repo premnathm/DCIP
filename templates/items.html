@@ -37,28 +37,22 @@
             <header class="section-header">
             </header>
             <div class="row portfolio-container">
-                {% if result %}
-                    {% for employee in result %}
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-                            <div class="portfolio-wrap">
-                                <div class="row">
-                                    <figure>
-                                        <img src="{{ url_for('static', filename = 'img/e1.jpg') }}" class="img-fluid" alt="">
-                                    </figure>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8 portfolio-info">
-                                        <h4><a href="/karma-history/{{ employee[0] }}">{{ employee[1] }}</a></h4>
-                                        <span> {{ employee[2] }} </span>
-                                    </div>
-                                    <div class="col-md-3 portfolio-info point-info">
-                                        <h4><a href="#">{{ employee[3] }}</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>  
-                    {% endfor %}
-                {% endif %}
+                <table class="table table-striped">
+                    <tr>
+                        <th>#</th>
+                        <th>Item Name</th>
+                        <th>Points</th>
+                    </tr>
+                    {% if result %}
+                        {% for item in result %}
+                        <tr>
+                            <td>{{ item[0] }}</td>
+                            <td>{{ item[1] }}</td>
+                            <td>{{ item[2] }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                </table>
             </div>
         </div>
     </section>
@@ -139,7 +133,7 @@
                 id: 4,
                 name: 'Item',
                 viebox: '0 0 32 32',
-                url: 'https://www.msn.com/en-us/Weather',
+                url: '/karma-list',
                 path: 'M26.938 12c-1.656 0-3 1.344-3 3 0 .353.073.685.184 1H4.938c-.552 0-1 .448-1 1s.448 1 1 1h22c1.656 0 3-1.344 3-3s-1.344-3-3-3zm-22 2h12c1.656 0 3-1.344 3-3s-1.344-3-3-3-3 1.344-3 3c0 .353.073.685.184 1H4.938c-.552 0-1 .448-1 1s.448 1 1 1zm16 6c-.059 0-.115.013-.174.018-.039-.003-.072-.018-.111-.018H5.225c-.711 0-1.287.448-1.287 1s.576 1 1.287 1h12.897c-.111.315-.184.648-.184 1 0 1.656 1.344 3 3 3s3-1.344 3-3-1.344-3-3-3z'
             },
 
