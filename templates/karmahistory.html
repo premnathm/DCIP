@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        {% if title %}
+        <title>DCKAP Community Insider Program</title>
+        {% else %}
+        <title>Welcome to {{ title }}!</title>
+        {% endif %}
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename = 'lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/darkly/bootstrap.min.css"> -->
+    <link href="{{ url_for('static', filename = 'css/timelinev.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+    <div class="brand-border"></div>
+    <header id="header">
+        <div class="container-fluid">
+            <div id="logo" class="pull-left">
+                <a href="index.php"><img class="" src="{{ url_for('static', filename = 'img/logo.png') }}" height="75px"/></a>
+            </div>
+            <div>
+                <button type="button" class="btn adduser" data-toggle="modal" data-target="#addUser">Add User</button>
+            </div>
+        </div>
+
+    </header>
+    <!--Works-->
+    <section class="work work-bg" id="work">
+        <div class="container">
+            <div class="row">
+                <div class="">
+                    <!-- Bootstrap CSS File -->
+
+<main id="main">
+    <section id="portfolio"  class="section-bg" >
+        <div class="container">
+            <!-- Timeline start -->
+            <div id="timeline" class="row ">
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2></h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                {% if result %}
+                    {% for transaction in result %}
+                        <div class="timelineCont col-12">
+                            <div class="row">
+                                <div class="date col-5">
+                                    <h2>{{ transaction[1] }}</h2>
+                                </div>
+
+                                <div class="text col-7">
+                                    <p>{{ transaction[0] }}</p>
+                                </div>
+                            </div>
+                        </div>  
+                    {% endfor %}
+                {% endif %}
+                <!-- <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>1700</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat tellus sit amet lorem aliquet, nec vestibulum diam sodales.
+                                Nunc id dolor eget quam lacinia mattis viverra vel erat. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>1800</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p>Donec ultrices sodales feugiat. Curabitur tempus mi leo, eu consectetur dolor dapibus et.
+                                Duis sit amet tortor quis justo efficitur imperdiet.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>1900</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p>Vivamus dui nisl, auctor non velit eget, pulvinar porttitor neque. Donec quam nisl, rutrum a pharetra ut, facilisis quis lacus. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>2000</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p>Aliquam fermentum vestibulum orci interdum auctor. Nunc sodales risus ut elit sodales ultrices. Donec a porttitor metus, non rhoncus eros.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>2100</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p>Aenean eget dui tempor, rutrum ligula sit amet, vulputate magna. Ut quis eros feugiat, ullamcorper odio et, pellentesque leo. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>2200</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p>Mauris cursus nulla ipsum, et dignissim nisl pellentesque et. Nullam maximus, arcu vel suscipit tristique, diam eros elementum mauris, at pulvinar lectus tellus congue dolor. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>2300</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p> Duis gravida maximus eros, non congue mi tempus eu. Aenean placerat lacus id tortor pretium, a blandit elit ullamcorper.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12 active">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>2400</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p> Pellentesque rutrum augue erat, id vehicula libero ultrices ut. Sed molestie urna tortor, congue consectetur augue pellentesque vitae.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>2500</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p> Pellentesque libero elit, hendrerit sit amet lacinia eget, fermentum vitae risus. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>2600</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p> Aenean aliquet venenatis orci id pharetra. Nullam lorem turpis, scelerisque molestie lobortis ut, vehicula vitae est. Aliquam erat volutpat. Praesent faucibus vehicula pretium.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2>2700</h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p> Sed ultrices odio ex, sed volutpat mauris volutpat ac. Donec tincidunt felis magna, in ornare nisl auctor vitae. Curabitur luctus sed erat ut venenatis.</p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="timelineCont col-12">
+                    <div class="row">
+                        <div class="date col-5">
+                            <h2></h2>
+                        </div>
+
+                        <div class="text col-7">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Timeline end -->
+        </div>
+    </section>
+</main>
+
+<div class="modal fade" id="addUser" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add User</h4>
+            </div>
+            <div class="modal-body" style="overflow: hidden">
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">name</label>
+                    <input class="col-md-6" type="text" id="name" name="name"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employeeid</label>
+                    <input class="col-md-6" type="text" id="employeeid" name="employeeid"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">designation</label>
+                    <input class="col-md-6" type="text" id="designation" name="designation"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employee_branch</label>
+                    <input class="col-md-6" type="text" id="employee_branch" name="employee_branch"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employee_doj</label>
+                    <input class="col-md-6" type="text" id="employee_doj" name="employee_doj"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employee_dob</label>
+                    <input class="col-md-6" type="text" id="employee_dob" name="employee_dob"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">is_admin</label>
+                    <input class="col-md-6" type="text" id="is_admin" name="is_admin"/>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="col-md-4">employee_type</label>
+                    <input class="col-md-6" type="text" id="employee_type" name="employee_type"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="{{ url_for('static', filename = 'js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/wow.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/common.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/jquery.timelinev.js') }}"></script>
+<script>
+    $(function(){
+        $('#timeline').timelinev({
+            containerDivs:    '.timelineCont',
+            dateDiv:         '.date',
+            textDiv:         '.text',
+            dateHtml:        'h2',
+            textHtml:        'p',
+            dateActiveClass: '.active',
+        });
+    });
+</script>
+</body>
+</html>
