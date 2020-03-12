@@ -41,7 +41,10 @@ def index():
         return redirect(url_for('leaderboard'))
     else:
         return redirect(url_for('login'))
-               
+
+@app.route('/category',methods=['GET', 'POST'])
+def category():
+    return render_template('category.html')
 
 @app.route('/leaderboard', methods=['GET', 'POST'])
 def leaderboard():
