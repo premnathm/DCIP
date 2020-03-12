@@ -1,14 +1,14 @@
 from flask import Flask, redirect, session, url_for, render_template, request, jsonify
 from flask_mysqldb import MySQL
 from flask_hashing import Hashing
-from flask_bcrypt import Bcrypt
+
 
 app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'root'
-app.config['MYSQL_DB'] = 'dcip'
+app.config['MYSQL_PASSWORD'] = 'welcome'
+app.config['MYSQL_DB'] = 'dcip_12march'
 
 mysql = MySQL(app)
 
@@ -41,6 +41,7 @@ def index():
         return redirect(url_for('leaderboard'))
     else:
         return redirect(url_for('login'))
+               
 
 @app.route('/leaderboard', methods=['GET', 'POST'])
 def leaderboard():
