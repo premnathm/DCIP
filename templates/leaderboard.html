@@ -22,6 +22,15 @@
 <body>
 <div class="wrapper" id="wrapper">
     <div class="brand-border"></div>
+    <header id="header">
+        <div class="container-fluid">
+            <div id="logo" class="pull-left">
+                <a href="index.php"><img class="" src="{{ url_for('static', filename = 'img/logo.png') }}" height="75px"/></a>
+            </div>
+            <div>
+                <button type="button" class="btn adduser" data-toggle="modal" data-target="#addUser">Add Item</button>
+            </div>
+        </div>
 
     {% include 'header.html' %}
 
