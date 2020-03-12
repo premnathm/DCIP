@@ -54,7 +54,7 @@ def leaderboard():
 @app.route('/karma-history/<int:emp_id>')
 def karmahistory(emp_id):
     cur = mysql.connection.cursor()
-    query = ('SELECT it.item_name, tr.asssigned_point FROM dcip_transactions as tr left join dcip_employees as em on tr.employee_id = em.id '
+    query = ('SELECT it.item_name, tr.asssigned_point, tr.created_at, em.name, em.employeeid, em.total_points FROM dcip_transactions as tr left join dcip_employees as em on tr.employee_id = em.id '
     'left join dcip_items as it on tr.item_id = it.id where tr.asssigned_point > 0 and em.id = %s order by tr.created_at desc') 
     param = (emp_id,)
     cur.execute(query,param)
