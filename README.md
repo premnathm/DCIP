@@ -8,3 +8,10 @@ Hackathon #2: DCIP Application
 “Build a web application to view and manage all the users and their reward points.”
 
 Technology : Python
+
+Database Folder : db/dcip.sql
+
+Run python file - Login page credentials
+
+DCKAPIN632
+dckap@123
