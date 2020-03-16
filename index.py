@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'welcome'
 app.config['MYSQL_DB'] = 'dcip'
 
 mysql = MySQL(app)
@@ -33,7 +33,7 @@ def login():
             session['employeeid'] = employeeid 
             return redirect(url_for('leaderboard'))
         else:
-            return redirect(url_for('login')) 
+            return redirect(url_for('login'))
     else:
         return render_template('index.html', title='DCKAP Community Insider Program')
 
@@ -51,7 +51,7 @@ def category():
 @app.route('/leaderboard', methods=['GET', 'POST'])
 def leaderboard():
     cur = mysql.connection.cursor()
-    query = "SELECT id,name,designation,total_points,employeeid FROM dcip_employees where total_points > 0"
+    query = "SELECT id,name,designation,total_points,employeeid,employee_photo FROM dcip_employees where total_points > 0"
     cur.execute(query)
     employeesdata = cur.fetchall()
     return render_template('leaderboard.html',result=employeesdata)
@@ -77,6 +77,11 @@ def karmalist():
     # return jsonify(itemsdata)
     return render_template('items.html',result=itemsdata)
 
+@app.route('/logout')
+def logout():
+   # remove the username from the session if it is there
+   session.pop('employeeid', None)
+   return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
