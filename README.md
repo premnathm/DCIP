@@ -13,5 +13,5 @@ Database Folder : db/dcip.sql
 
 Run python file - Login page credentials
 
-DCKAPIN632
+DCKAPIN632 / 
 dckap@123
